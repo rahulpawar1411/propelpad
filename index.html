@@ -646,10 +646,140 @@
       #mobile-menu-backdrop {
         transition: none;
       }
+      .page-loader-logo {
+        animation: none !important;
+      }
+    }
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      background: #F4F7FC;
+      transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.45s;
+    }
+    .page-loader::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(#D3DEEE 1px, transparent 1px),
+        linear-gradient(90deg, #D3DEEE 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+    .page-loader::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(244, 247, 252, 0.92) 0%,
+        rgba(244, 247, 252, 0.35) 22%,
+        rgba(244, 247, 252, 0.12) 50%,
+        rgba(244, 247, 252, 0.35) 78%,
+        rgba(244, 247, 252, 0.92) 100%
+      );
+      pointer-events: none;
+    }
+    .page-loader.is-done {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .page-loader-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .page-loader-logo-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 2.75rem;
+    }
+    .page-loader-logo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 70% 65% at 50% 50%,
+        rgba(244, 247, 252, 0.82) 0%,
+        rgba(244, 247, 252, 0.35) 55%,
+        rgba(244, 247, 252, 0) 100%
+      );
+      pointer-events: none;
+    }
+    .page-loader-logo {
+      position: relative;
+      z-index: 1;
+      height: 3.75rem;
+      width: auto;
+      max-width: min(80vw, 18rem);
+      animation: loader-breathe 1.4s ease-in-out infinite;
+    }
+    @media (min-width: 640px) {
+      .page-loader-logo {
+        height: 4.5rem;
+        max-width: 20rem;
+      }
+      .page-loader-logo-wrap {
+        padding: 1.75rem 3.5rem;
+      }
+    }
+    .page-loader-bar {
+      position: relative;
+      width: 5.5rem;
+      height: 3px;
+      border-radius: 999px;
+      background: #D3DEEE;
+      overflow: hidden;
+    }
+    .page-loader-bar span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 32%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, transparent, #004CB5 35%, #7AABEA 50%, #004CB5 65%, transparent);
+    }
+    .page-loader-bar span:nth-child(1) {
+      animation: loader-slide 1.15s ease-in-out infinite;
+    }
+    .page-loader-bar span:nth-child(2) {
+      animation: loader-slide 1.15s ease-in-out infinite 0.55s;
+      opacity: 0.55;
+    }
+    @keyframes loader-breathe {
+      0%, 100% { opacity: 0.75; transform: scale(0.98); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes loader-slide {
+      0% { transform: translateX(-130%); }
+      100% { transform: translateX(360%); }
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-freeze-100 selection:text-freeze-900">
+
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading Propelpad">
+    <div class="page-loader-inner">
+      <div class="page-loader-logo-wrap">
+        <img src="assets/propelpad-logo.png" alt="Propelpad" class="page-loader-logo" />
+      </div>
+      <div class="page-loader-bar" aria-hidden="true"><span></span><span></span></div>
+    </div>
+  </div>
 
   <header class="site-header bg-paper/90 backdrop-blur-md border-b border-frostline">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-16 py-3 flex items-center justify-between gap-3">
@@ -1436,6 +1566,26 @@
 
   <script>
     lucide.createIcons();
+
+    (function initPageLoader() {
+      const loader = document.getElementById('page-loader');
+      if (!loader) return;
+      const started = Date.now();
+      const minMs = 700;
+
+      function hideLoader() {
+        const wait = Math.max(0, minMs - (Date.now() - started));
+        setTimeout(function () {
+          loader.classList.add('is-done');
+          setTimeout(function () {
+            if (loader.parentNode) loader.parentNode.removeChild(loader);
+          }, 500);
+        }, wait);
+      }
+
+      if (document.readyState === 'complete') hideLoader();
+      else window.addEventListener('load', hideLoader);
+    })();
 
     function navigateTo(pageId) {
       document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
