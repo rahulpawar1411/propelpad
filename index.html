@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Propelpad — Growth Partner for D2C Brands on Q-Commerce</title>
+  <meta name="description" content="Propelpad is the growth partner for D2C brands on Q-Commerce, E-Commerce, and D2C platforms. We own growth with you — listings, catalogue, ads, and rankings on Blinkit, Zepto, Instamart, Flipkart Minutes, Amazon, and BigBasket.">
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#F4F7FC',
+            cloud: '#E7EEF8',
+            frostline: '#D3DEEE',
+            ink: '#071433',
+            slate: '#0E2454',
+            steel: '#3E5274',
+            mist: '#7D90AA',
+            freeze: {
+              50: '#E8F1FC',
+              100: '#D0E3F8',
+              300: '#7AABEA',
+              500: '#004CB5',
+              600: '#003E96',
+              700: '#003278',
+              900: '#001A44'
+            },
+            mint: {
+              100: '#D0E3F8',
+              500: '#004CB5',
+              600: '#003E96'
+            },
+            scoop: {
+              100: '#E8F1FC',
+              500: '#003E96',
+              600: '#003278'
+            },
+            vanilla: {
+              100: '#E8F1FC',
+              500: '#004CB5',
+              600: '#003E96'
+            }
+          },
+          fontFamily: {
+            display: ['Satoshi', 'DM Sans', 'system-ui', 'sans-serif'],
+            body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --paper: #F4F7FC;
+      --ink: #071433;
+      --freeze-500: #004CB5;
+    }
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+    }
+    html.menu-scroll-lock,
+    body.menu-scroll-lock {
+      overflow: hidden !important;
+      overscroll-behavior: none;
+      height: 100%;
+    }
+    body.menu-scroll-lock {
+      touch-action: none;
+    }
+    body.menu-is-open .page-view.active,
+    body.menu-is-open footer {
+      filter: blur(8px);
+      transform: scale(1.015);
+      transform-origin: center top;
+      pointer-events: none;
+      user-select: none;
+      transition:
+        filter 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .page-view.active,
+    footer {
+      transition:
+        filter 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    #mobile-menu.is-open {
+      touch-action: pan-y;
+      overscroll-behavior: contain;
+    }
+    body {
+      background-color: #F4F7FC;
+      color: #071433;
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+      padding-top: var(--site-header-h, 4.75rem);
+    }
+    h1, h2, h3, p {
+      overflow-wrap: break-word;
+    }
+    .font-mono-data {
+      font-family: 'Space Grotesk', monospace, sans-serif;
+      font-variant-numeric: tabular-nums;
+    }
+    .grid-bg-dark {
+      background-image: linear-gradient(rgba(0, 76, 181, 0.14) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 76, 181, 0.14) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .grid-bg-light {
+      background-image: linear-gradient(#D3DEEE 1px, transparent 1px),
+                        linear-gradient(90deg, #D3DEEE 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .pulse-dot {
+      box-shadow: 0 0 0 0 rgba(0, 76, 181, 0.7);
+      animation: pulse-ring 2s cubic-bezier(0.2, 0, 0, 1) infinite;
+    }
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(0, 76, 181, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(0, 76, 181, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 76, 181, 0); }
+    }
+    .hover-lift {
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+    .hero-screen {
+      min-height: calc(100svh - 4.75rem + 8rem);
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-logo-stage {
+      perspective: 900px;
+      transform-style: preserve-3d;
+      width: 100%;
+      max-width: 20rem;
+      display: flex;
+      justify-content: center;
+    }
+    @media (min-width: 640px) {
+      .hero-logo-stage {
+        max-width: 22rem;
+      }
+    }
+    @media (min-width: 1280px) {
+      .hero-logo-stage {
+        max-width: min(100%, 24rem);
+        justify-content: flex-end;
+        margin-left: auto;
+      }
+    }
+    .hero-logo-3d {
+      width: 100%;
+      height: auto;
+      transform-style: preserve-3d;
+      transform: rotateX(0deg) rotateY(0deg) translateY(0);
+      will-change: transform;
+      filter: drop-shadow(0 18px 28px rgba(0, 76, 181, 0.24));
+      transition: filter 0.35s ease;
+    }
+    .hero-logo-stage:hover .hero-logo-3d {
+      filter: drop-shadow(0 22px 36px rgba(0, 76, 181, 0.32));
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-logo-3d {
+        transform: none !important;
+      }
+    }
+    .platform-logo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 4.5rem;
+      padding: 0.85rem 0.6rem;
+      border-radius: 0.75rem;
+      border: 1px solid #D3DEEE;
+      background: #fff;
+    }
+    @media (min-width: 640px) {
+      .platform-logo-card {
+        min-height: 5.5rem;
+        padding: 1rem 0.75rem;
+      }
+    }
+    .platform-logo-card img {
+      width: auto;
+      height: 2rem;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    @media (min-width: 640px) {
+      .platform-logo-card img {
+        height: 2.4rem;
+        max-width: 7.5rem;
+      }
+    }
+    .platform-logo-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.75rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: #071433;
+    }
+    .platform-logo-pill img {
+      height: 1.35rem;
+      width: auto;
+      max-width: 5.5rem;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+    .platform-logo-pill img.no-invert {
+      filter: none;
+    }
+    .footer-platform-icon {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: 100%;
+    }
+    .footer-platform-icon img {
+      width: 1.15rem;
+      height: 1.15rem;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .step-chart {
+      position: relative;
+      margin-top: 2rem;
+      padding: 1.25rem 0.85rem 1.25rem 1.1rem;
+      max-width: 100%;
+      overflow: hidden;
+      background:
+        linear-gradient(#D3DEEE 1px, transparent 1px),
+        linear-gradient(90deg, #D3DEEE 1px, transparent 1px),
+        #F4F7FC;
+      background-size: 22px 22px, 22px 22px, auto;
+      border-left: 3px solid #071433;
+      border-bottom: 3px solid #071433;
+    }
+    @media (min-width: 768px) {
+      .step-chart {
+        margin-top: 2.75rem;
+        padding: 1.75rem 1rem 1.5rem 1.35rem;
+        background-size: 28px 28px, 28px 28px, auto;
+      }
+    }
+    .step-chart::before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      bottom: -3px;
+      width: 10px;
+      height: 10px;
+      background: #071433;
+      clip-path: polygon(0 0, 0 100%, 100% 100%);
+      pointer-events: none;
+    }
+    /* Mobile: vertical descending timeline (high → low) */
+    .step-row {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 1.15rem;
+      align-items: stretch;
+      min-height: 0;
+    }
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      min-width: 0;
+      min-height: 0;
+      padding-bottom: 0;
+    }
+    .step-caption {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+      max-width: none;
+      gap: 0.7rem;
+    }
+    .step-dot {
+      width: 0.85rem;
+      height: 0.85rem;
+      border-radius: 999px;
+      background: #fff;
+      border: 2.5px solid #004CB5;
+      box-shadow: 0 3px 10px rgba(0, 76, 181, 0.28);
+      margin-top: 0.2rem;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+    .step-caption h2 {
+      font-size: 0.95rem;
+      line-height: 1.25;
+      margin: 0 0 0.25rem;
+      color: #071433;
+    }
+    .step-caption p {
+      font-size: 0.8rem;
+      color: #3E5274;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .step-copy {
+      min-width: 0;
+      flex: 1;
+    }
+    /* Desktop: ascending chart points */
+    @media (min-width: 768px) {
+      .step-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.25rem;
+        align-items: end;
+        min-height: 18rem;
+        flex-direction: unset;
+      }
+      .step-item {
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 17rem;
+      }
+      .step-item[data-level="1"] { padding-bottom: 0; }
+      .step-item[data-level="2"] { padding-bottom: 2.75rem; }
+      .step-item[data-level="3"] { padding-bottom: 5.5rem; }
+      .step-item[data-level="4"] { padding-bottom: 8.25rem; }
+      .step-caption {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 11rem;
+        gap: 0;
+      }
+      .step-dot {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+      .step-caption h2 { font-size: 0.92rem; margin-bottom: 0.3rem; }
+      .step-caption p { font-size: 0.75rem; line-height: 1.4; }
+    }
+    .why-rail {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #D3DEEE;
+    }
+    .why-row {
+      display: grid;
+      grid-template-columns: 3.25rem minmax(0, 1fr);
+      gap: 0.85rem 1rem;
+      align-items: start;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid #D3DEEE;
+    }
+    @media (min-width: 768px) {
+      .why-row {
+        grid-template-columns: 4.5rem minmax(0, 1fr);
+        gap: 1.25rem 1.75rem;
+        padding: 1.4rem 0;
+      }
+    }
+    .why-index {
+      font-family: "Space Grotesk", monospace, sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #004CB5;
+      letter-spacing: 0.04em;
+      padding-top: 0.2rem;
+    }
+    @media (min-width: 768px) {
+      .why-index { font-size: 1.75rem; }
+    }
+    .why-body {
+      min-width: 0;
+      border-left: 2px solid #004CB5;
+      padding-left: 0.9rem;
+    }
+    @media (min-width: 768px) {
+      .why-body { padding-left: 1.25rem; }
+    }
+    .why-body h3 {
+      font-size: 1.05rem;
+      margin: 0 0 0.35rem;
+      color: #071433;
+    }
+    @media (min-width: 768px) {
+      .why-body h3 { font-size: 1.15rem; }
+    }
+    .why-body p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #3E5274;
+      line-height: 1.55;
+      max-width: 42rem;
+    }
+    .agency-band {
+      position: relative;
+      overflow: hidden;
+      background: #004CB5;
+      color: #fff;
+    }
+    .agency-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+    .agency-band-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 1.75rem;
+      padding: 3rem 0;
+    }
+    @media (min-width: 1024px) {
+      .agency-band-inner {
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+        gap: 2.5rem;
+        align-items: end;
+        padding: 3.75rem 0;
+      }
+    }
+    .agency-band .eyebrow {
+      font-family: "Space Grotesk", monospace, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 0.85rem;
+    }
+    .agency-band h2 {
+      margin: 0 0 1rem;
+      max-width: 18ch;
+    }
+    .agency-band h2 .mark {
+      color: #D0E3F8;
+    }
+    .agency-band .lead {
+      margin: 0;
+      max-width: 34rem;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+    .agency-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .agency-shift {
+      border-left: 2px solid rgba(255, 255, 255, 0.35);
+      padding-left: 1.1rem;
+    }
+    @media (max-width: 1023px) {
+      .agency-shift {
+        border-left: none;
+        border-top: 2px solid rgba(255, 255, 255, 0.25);
+        padding-left: 0;
+        padding-top: 1.25rem;
+      }
+    }
+    .agency-shift .from,
+    .agency-shift .to {
+      display: block;
+    }
+    .agency-shift .label {
+      font-family: "Space Grotesk", monospace, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 0.25rem;
+    }
+    .agency-shift .from {
+      margin-bottom: 1.1rem;
+      opacity: 0.72;
+      text-decoration: line-through;
+      text-decoration-thickness: 1.5px;
+    }
+    .agency-shift .line {
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .agency-shift .to .line {
+      color: #fff;
+    }
+    .contact-map {
+      width: 100%;
+      height: 14rem;
+      border: 1px solid #D3DEEE;
+      border-radius: 1rem;
+      background: #E7EEF8;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      pointer-events: auto;
+    }
+    @media (min-width: 1024px) {
+      .contact-map {
+        height: 100%;
+        min-height: 16rem;
+        border-radius: 0;
+        border: none;
+      }
+    }
+    .office-panel {
+      display: grid;
+      overflow: hidden;
+      border: 1px solid #D3DEEE;
+      border-radius: 1rem;
+      background: #fff;
+    }
+    @media (min-width: 1024px) {
+      .office-panel {
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+        min-height: 18rem;
+      }
+    }
+    .office-details {
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .office-details {
+        padding: 2rem 2rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .office-details {
+        border-right: 1px solid #D3DEEE;
+        padding: 2.25rem 2.25rem;
+      }
+    }
+    .office-meta {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .office-meta-row {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+    .office-meta-icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.5rem;
+      background: #E8F1FC;
+      border: 1px solid #D3DEEE;
+      color: #004CB5;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 80;
+    }
+    #mobile-menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      z-index: 81;
+      max-height: min(70vh, 28rem);
+      overflow-y: auto;
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+      box-shadow: 0 18px 40px rgba(7, 20, 51, 0.14);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-0.65rem);
+      transition:
+        opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.28s;
+    }
+    #mobile-menu.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    #mobile-menu-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      background: rgba(7, 20, 51, 0.12);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.28s;
+    }
+    #mobile-menu-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #mobile-menu,
+      #mobile-menu-backdrop {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-freeze-100 selection:text-freeze-900">
+
+  <header class="site-header bg-paper/90 backdrop-blur-md border-b border-frostline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-16 py-3 flex items-center justify-between gap-3">
+      <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center shrink-0 min-w-0 focus:outline-none" aria-label="Propelpad home">
+        <img src="assets/propelpad-logo.png" alt="Propelpad" class="h-8 sm:h-10 w-auto max-w-[46vw]" />
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-0.5 min-w-0">
+        <button onclick="navigateTo('home')" data-nav="home" class="nav-link px-2.5 py-2 rounded-lg text-sm font-semibold whitespace-nowrap transition-colors text-freeze-600 bg-freeze-50">Home</button>
+        <button onclick="navigateTo('opportunity')" data-nav="opportunity" class="nav-link px-2.5 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors text-steel hover:text-ink hover:bg-black/5">The Opportunity</button>
+        <button onclick="navigateTo('partnership')" data-nav="partnership" class="nav-link px-2.5 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors text-steel hover:text-ink hover:bg-black/5">Why choose us</button>
+        <button onclick="navigateTo('platforms')" data-nav="platforms" class="nav-link px-2.5 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors text-steel hover:text-ink hover:bg-black/5">Platforms</button>
+        <button onclick="navigateTo('contact')" data-nav="contact" class="nav-link px-2.5 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors text-steel hover:text-ink hover:bg-black/5">Contact</button>
+      </nav>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button onclick="navigateTo('contact')" class="hidden xl:inline-flex items-center px-3.5 py-2 rounded-xl border border-frostline text-xs font-mono font-bold tracking-wide uppercase text-ink hover:border-ink transition-colors">
+          Let's Talk
+        </button>
+        <button onclick="navigateTo('engagement')" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-freeze-500 hover:bg-freeze-600 text-white font-display font-semibold text-sm shadow-md shadow-freeze-500/20 hover-lift transition-all">
+          <span>Get Listed</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" class="xl:hidden p-2 text-ink hover:bg-black/5 rounded-lg focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6" id="mobile-menu-icon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="xl:hidden border-b border-frostline bg-paper px-4 pt-2 pb-6 space-y-1">
+      <button onclick="navigateTo('home'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-lg font-display text-base font-semibold text-ink hover:bg-freeze-50">Home</button>
+      <button onclick="navigateTo('opportunity'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-lg font-display text-base font-semibold text-steel hover:text-ink hover:bg-freeze-50">The Opportunity</button>
+      <button onclick="navigateTo('partnership'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-lg font-display text-base font-semibold text-steel hover:text-ink hover:bg-freeze-50">Why choose us</button>
+      <button onclick="navigateTo('platforms'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-lg font-display text-base font-semibold text-steel hover:text-ink hover:bg-freeze-50">Platforms</button>
+      <button onclick="navigateTo('contact'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-lg font-display text-base font-semibold text-steel hover:text-ink hover:bg-freeze-50">Contact</button>
+    </div>
+  </header>
+  <div id="mobile-menu-backdrop" class="xl:hidden" onclick="closeMobileMenu()" aria-hidden="true"></div>
+
+  <!-- HOME -->
+  <main id="page-home" class="page-view active flex-1">
+    <section class="hero-screen relative overflow-hidden">
+      <div class="absolute inset-0 grid-bg-light pointer-events-none z-0"></div>
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10 flex-1 flex items-center py-8 lg:py-10">
+        <div class="grid xl:grid-cols-12 gap-8 xl:gap-10 items-center w-full min-w-0">
+          <div class="xl:col-span-7 min-w-0 space-y-5">
+            <h1 class="font-display font-bold text-[clamp(1.85rem,4.2vw,3.25rem)] tracking-tight text-ink leading-[1.08]">
+              Your Customers Are 10 Minutes Away.<br>
+              <span class="text-freeze-500">Are You?</span>
+            </h1>
+            <p class="text-base sm:text-lg text-steel max-w-xl leading-relaxed">
+              Propelpad is the growth partner for D2C brands on Q-Commerce, E-Commerce, and D2C platforms. We work with your brand like a founder would — owning growth, not just executing tasks.
+            </p>
+            <div class="flex flex-wrap items-center gap-3">
+              <button onclick="navigateTo('contact')" class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-freeze-500 hover:bg-freeze-600 text-white font-display font-semibold text-sm sm:text-base">
+                Let's talk
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <button onclick="navigateTo('partnership')" class="inline-flex items-center px-5 py-3 rounded-md border-2 border-freeze-700 bg-white text-freeze-700 font-display font-semibold text-sm sm:text-base hover:bg-freeze-50">
+                Why we are not an agency
+              </button>
+            </div>
+              </div>
+          <div class="xl:col-span-5 min-w-0 flex items-center justify-center xl:justify-end">
+            <div class="hero-logo-stage" id="hero-logo-stage">
+              <img src="assets/propelpad-logo-3d.png" alt="Propelpad" class="hero-logo-3d" id="hero-logo-3d" />
+              </div>
+              </div>
+            </div>
+          </div>
+      <div class="relative z-10 bg-freeze-700 text-white">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 py-6 sm:py-7 grid lg:grid-cols-12 gap-5 items-center">
+          <div class="lg:col-span-8 min-w-0">
+            <p class="font-display font-bold text-[clamp(1.2rem,2.6vw,1.65rem)]">Own your category. Every single day.</p>
+            <p class="mt-1.5 text-sm sm:text-base text-white/80">We grow with you — listings, catalogue, ads, and rankings, watched every day.</p>
+                </div>
+          <div class="lg:col-span-4 lg:text-right">
+            <button onclick="navigateTo('engagement')" class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-white text-freeze-700 font-display font-semibold">
+              See the first 90 days
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+              </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 border-b border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-4">Where your customers already are</div>
+        <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] text-ink mb-8">Direct access to India's biggest platforms.</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div class="platform-logo-card" title="Blinkit"><img src="assets/platforms/blinkit.png" alt="Blinkit"></div>
+          <div class="platform-logo-card" title="Instamart"><img src="assets/platforms/instamart.svg" alt="Instamart"></div>
+          <div class="platform-logo-card" title="Zepto"><img src="assets/platforms/zepto.png" alt="Zepto"></div>
+          <div class="platform-logo-card" title="Flipkart Minutes"><img src="assets/platforms/flipkart.svg" alt="Flipkart Minutes"></div>
+          <div class="platform-logo-card" title="Amazon"><img src="assets/platforms/amazon.svg" alt="Amazon"></div>
+          <div class="platform-logo-card" title="BigBasket"><img src="assets/platforms/bigbasket.svg" alt="BigBasket"></div>
+          </div>
+        <p class="mt-6 text-steel max-w-3xl">Most brands spend months trying to get onboarded onto Blinkit or Zepto. We cut that timeline dramatically through category-manager relationships most agencies do not have.</p>
+        <button onclick="navigateTo('platforms')" class="mt-6 inline-flex items-center gap-2 text-freeze-600 font-display font-semibold hover:text-freeze-700">
+          See how platform access works
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-cloud border-b border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">The opportunity</div>
+        <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] text-ink max-w-3xl">Q-Commerce is where your customers are.</h2>
+        <p class="mt-4 text-steel max-w-3xl leading-relaxed">Quick commerce has changed how consumers discover, decide, and buy. Brands that dominate these platforms don't just win sales — they win entire categories. Simply being listed is not enough.</p>
+        <div class="mt-10 grid md:grid-cols-3 gap-5">
+          <article class="rounded-2xl border border-frostline bg-white p-6 min-w-0">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-freeze-50 border border-frostline text-freeze-600 mb-4">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-display font-bold text-lg text-ink mb-2">Seconds, not days</h3>
+            <p class="text-sm text-steel leading-relaxed">Consumers discover and purchase within minutes. If your brand isn't visible at the right moment, a competitor wins that sale.</p>
+          </article>
+          <article class="rounded-2xl border border-frostline bg-white p-6 min-w-0">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-freeze-50 border border-frostline text-freeze-600 mb-4">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-display font-bold text-lg text-ink mb-2">Algorithms reward the prepared</h3>
+            <p class="text-sm text-steel leading-relaxed">Keyword rankings, conversion rates, ad efficiency, and stock health all feed into how often your brand shows up.</p>
+          </article>
+          <article class="rounded-2xl border border-frostline bg-white p-6 min-w-0">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-freeze-50 border border-frostline text-freeze-600 mb-4">
+              <i data-lucide="eye" class="w-5 h-5"></i>
+            </span>
+            <h3 class="font-display font-bold text-lg text-ink mb-2">Daily vigilance wins</h3>
+            <p class="text-sm text-steel leading-relaxed">The brands winning Q-Commerce today have someone watching these signals every single day.</p>
+          </article>
+        </div>
+        <button onclick="navigateTo('opportunity')" class="mt-8 inline-flex items-center gap-2 text-freeze-600 font-display font-semibold hover:text-freeze-700">
+          Explore the opportunity
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 border-b border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">What brands are up against</div>
+        <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] text-ink max-w-3xl">The platforms are hard to crack. Staying visible is a full-time job.</h2>
+        <div class="mt-10 why-rail">
+          <div class="why-row">
+            <div class="why-index">01</div>
+            <div class="why-body">
+              <h3 class="font-display font-bold">Low platform visibility</h3>
+              <p>Buried beneath competitors with no clear strategy to climb the shelf.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-index">02</div>
+            <div class="why-body">
+              <h3 class="font-display font-bold">Wasted ad spend</h3>
+              <p>Campaigns running but not converting. Budgets draining without meaningful scale.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-index">03</div>
+            <div class="why-body">
+              <h3 class="font-display font-bold">No growth owner</h3>
+              <p>Agencies execute tasks, but nobody is truly accountable for your numbers.</p>
+        </div>
+              </div>
+          <div class="why-row">
+            <div class="why-index">04</div>
+            <div class="why-body">
+              <h3 class="font-display font-bold">Hard to get listed</h3>
+              <p>Blinkit, Zepto, Instamart, and Flipkart Minutes have strict onboarding gates. Most brands spend months trying and still don't make it.</p>
+            </div>
+              </div>
+              </div>
+              </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-ink text-white border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-300 mb-3">Daily ownership</div>
+        <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] max-w-3xl">What we do every single day.</h2>
+        <p class="mt-4 text-mist max-w-3xl leading-relaxed">Growth ownership is not a monthly review call. These daily optimisations compound — lower acquisition costs, consistent ranking growth, and sustained revenue scale.</p>
+        <ol class="mt-10 space-y-0 border-t border-white/15">
+          <li class="py-5 border-b border-white/15 grid sm:grid-cols-[3.5rem_1fr] gap-3 sm:gap-5">
+            <span class="font-mono text-freeze-300 font-bold text-sm">01</span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Keyword &amp; search management</h3>
+              <p class="mt-1 text-sm text-mist leading-relaxed">Monitor rankings, add high-intent search terms based on trend shifts, remove inefficient keywords, and track competitor movements in real time.</p>
+                </div>
+          </li>
+          <li class="py-5 border-b border-white/15 grid sm:grid-cols-[3.5rem_1fr] gap-3 sm:gap-5">
+            <span class="font-mono text-freeze-300 font-bold text-sm">02</span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Bid &amp; cost efficiency</h3>
+              <p class="mt-1 text-sm text-mist leading-relaxed">Daily CPM and CPC monitoring, bid adjustments based on conversion velocity, and budget reallocation toward high-performing SKUs.</p>
+              </div>
+          </li>
+          <li class="py-5 border-b border-white/15 grid sm:grid-cols-[3.5rem_1fr] gap-3 sm:gap-5">
+            <span class="font-mono text-freeze-300 font-bold text-sm">03</span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Listing &amp; conversion monitoring</h3>
+              <p class="mt-1 text-sm text-mist leading-relaxed">Tracking SKU-level conversion rates, pricing and discount calibration, and listing visibility checks.</p>
+            </div>
+          </li>
+          <li class="py-5 border-b border-white/15 grid sm:grid-cols-[3.5rem_1fr] gap-3 sm:gap-5">
+            <span class="font-mono text-freeze-300 font-bold text-sm">04</span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Platform algorithm signals</h3>
+              <p class="mt-1 text-sm text-mist leading-relaxed">Monitoring search placement fluctuations and managing stock-health signals that affect rankings.</p>
+            </div>
+          </li>
+          <li class="py-5 grid sm:grid-cols-[3.5rem_1fr] gap-3 sm:gap-5">
+            <span class="font-mono text-freeze-300 font-bold text-sm">05</span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Performance intervention</h3>
+              <p class="mt-1 text-sm text-mist leading-relaxed">When ROAS drops, we act within hours — not at the next weekly call. Winning campaigns scale fast. Losing ones get fixed or cut.</p>
+                </div>
+          </li>
+        </ol>
+        <button onclick="navigateTo('platforms')" class="mt-8 inline-flex items-center gap-2 text-freeze-300 font-display font-semibold hover:text-white">
+          Full platform playbook
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 border-b border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-5 min-w-0">
+            <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">First 90–120 days</div>
+            <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] text-ink">Quick commerce onboarding gates are strict.</h2>
+            <p class="mt-4 text-steel leading-relaxed">Most brands spend months trying and still don't make it through. Here is how the engagement is structured while we get you live.</p>
+            <p class="mt-6 font-display font-bold text-2xl text-freeze-600">₹1,00,000<span class="text-base font-semibold text-steel"> / month</span></p>
+            <p class="mt-2 text-sm text-steel">Covers the onboarding sprint: platform access, documentation, and catalogue setup until you're live.</p>
+            <button onclick="navigateTo('engagement')" class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-md bg-freeze-500 hover:bg-freeze-600 text-white font-display font-semibold">
+              See the first 90 days
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </div>
+          <div class="lg:col-span-7 min-w-0 space-y-6">
+            <div class="border-l-2 border-freeze-500 pl-4 sm:pl-5">
+              <div class="text-xs font-mono font-bold text-freeze-600 mb-1">Month 1 &amp; 2</div>
+              <h3 class="font-display font-bold text-lg text-ink mb-1">Pitch and setup</h3>
+              <p class="text-sm text-steel leading-relaxed">Pitching the brand to all platforms, category mapping, compliance documentation, brand registration, and catalogue prep across every platform you are targeting.</p>
+            </div>
+            <div class="border-l-2 border-freeze-500 pl-4 sm:pl-5">
+              <div class="text-xs font-mono font-bold text-freeze-600 mb-1">Month 3</div>
+              <h3 class="font-display font-bold text-lg text-ink mb-1">Platform onboarding</h3>
+              <p class="text-sm text-steel leading-relaxed">Securing listing approval, SKU mapping, and pricing setup on Blinkit, Zepto, Instamart, and Flipkart Minutes through category-manager relationships.</p>
+          </div>
+            <div class="border-l-2 border-freeze-500 pl-4 sm:pl-5">
+              <div class="text-xs font-mono font-bold text-freeze-600 mb-1">Month 4</div>
+              <h3 class="font-display font-bold text-lg text-ink mb-1">Go live</h3>
+              <p class="text-sm text-steel leading-relaxed">First orders go live, campaigns launch, and performance baselines are set before we move into full platform management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="agency-band">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 agency-band-inner">
+        <div>
+          <div class="eyebrow">Hours billed → Growth owned</div>
+          <h2 class="font-display font-bold text-[clamp(1.55rem,3.6vw,2.55rem)] leading-tight">
+            Still paying your agency to <span class="mark">“manage”</span> your ads?
+        </h2>
+          <p class="lead">Traditional agencies bill hours and deliver reports. Propelpad embeds into your brand like an in-house growth team, accountable for revenue, rankings, and category position.</p>
+          <div class="agency-actions">
+            <button onclick="navigateTo('partnership')" class="px-5 py-3 rounded-md bg-white text-freeze-700 font-display font-semibold">See the difference</button>
+            <button onclick="navigateTo('contact')" class="px-5 py-3 rounded-md border-2 border-white/40 text-white font-display font-semibold hover:bg-white/10">Let's talk</button>
+      </div>
+          </div>
+        <div class="agency-shift" aria-hidden="true">
+          <div class="from">
+            <div class="label">Old model</div>
+            <div class="line font-display">Paid on spend &amp; slides</div>
+            </div>
+          <div class="to">
+            <div class="label">Propelpad</div>
+            <div class="line font-display">Paid on your revenue</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+          <div class="lg:col-span-7 min-w-0">
+            <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">Talk to the founders</div>
+            <h2 class="font-display font-bold text-[clamp(1.55rem,3.6vw,2.55rem)] text-ink max-w-xl leading-tight">Ready to own your category?</h2>
+            <p class="mt-4 text-steel max-w-xl leading-relaxed">Adam and Gyan built Propelpad to give D2C brands a real growth partner on Q-Commerce — not another agency slide deck.</p>
+          </div>
+          <div class="lg:col-span-5 min-w-0 flex flex-wrap gap-3 lg:justify-end">
+            <button onclick="navigateTo('contact')" class="inline-flex items-center gap-2 px-5 py-3 rounded-md border-2 border-freeze-700 bg-white text-freeze-700 font-display font-semibold hover:bg-freeze-50">
+              Meet the founders
+          </button>
+            <button onclick="navigateTo('contact')" class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-freeze-500 hover:bg-freeze-600 text-white font-display font-semibold">
+              Let's talk
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- OPPORTUNITY -->
+  <main id="page-opportunity" class="page-view flex-1">
+    <section class="py-16 border-b border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="font-display font-bold text-[clamp(1.75rem,4.5vw,3rem)] text-ink max-w-3xl leading-tight">Q-Commerce is where your customers are.</h1>
+        <p class="mt-5 text-lg text-steel max-w-3xl">Quick commerce has changed how consumers discover, decide, and buy. Brands that dominate these platforms don't just win sales — they win entire categories. The opportunity is massive. Simply being listed is not enough.</p>
+        <div class="mt-12 grid md:grid-cols-3 gap-5">
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-freeze-50 border border-frostline text-freeze-600 mb-4">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </span>
+            <h2 class="font-display font-bold text-xl text-ink mb-3">Seconds, not days</h2>
+            <p class="text-steel text-sm leading-relaxed">Consumers discover and purchase within minutes, not days. If your brand isn't visible at the right moment, a competitor wins that sale.</p>
+          </article>
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-freeze-50 border border-frostline text-freeze-600 mb-4">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </span>
+            <h2 class="font-display font-bold text-xl text-ink mb-3">Algorithms reward the prepared</h2>
+            <p class="text-steel text-sm leading-relaxed">Keyword rankings, conversion rates, ad efficiency, and stock health all feed into how often your brand shows up.</p>
+          </article>
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-freeze-50 border border-frostline text-freeze-600 mb-4">
+              <i data-lucide="eye" class="w-5 h-5"></i>
+            </span>
+            <h2 class="font-display font-bold text-xl text-ink mb-3">Daily vigilance wins</h2>
+            <p class="text-steel text-sm leading-relaxed">The brands winning Q-Commerce today have someone watching these signals every single day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">What most D2C brands are up against</div>
+        <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] text-ink max-w-3xl">The platforms are hard to crack. Staying visible is a full-time job.</h2>
+        <div class="mt-10 grid md:grid-cols-2 gap-5">
+          <article class="rounded-2xl bg-cloud border border-frostline p-6">
+            <h3 class="font-display font-bold text-xl text-ink mb-2">Low platform visibility</h3>
+            <p class="text-steel text-sm">Buried beneath competitors with no clear strategy to climb the shelf.</p>
+          </article>
+          <article class="rounded-2xl bg-cloud border border-frostline p-6">
+            <h3 class="font-display font-bold text-xl text-ink mb-2">Wasted ad spend</h3>
+            <p class="text-steel text-sm">Campaigns running but not converting. Budgets draining without meaningful scale.</p>
+          </article>
+          <article class="rounded-2xl bg-cloud border border-frostline p-6">
+            <h3 class="font-display font-bold text-xl text-ink mb-2">No growth owner</h3>
+            <p class="text-steel text-sm">Agencies execute tasks, but nobody is truly accountable for your numbers.</p>
+          </article>
+          <article class="rounded-2xl bg-cloud border border-frostline p-6">
+            <h3 class="font-display font-bold text-xl text-ink mb-2">Hard to get listed</h3>
+            <p class="text-steel text-sm">Blinkit, Zepto, Instamart, and Flipkart Minutes have strict onboarding gates. Most brands spend months trying and still don't make it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PARTNERSHIP -->
+  <main id="page-partnership" class="page-view flex-1">
+    <section class="py-16 border-b border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">We are not an agency</div>
+        <h1 class="font-display font-bold text-[clamp(1.75rem,4.5vw,3rem)] text-ink max-w-3xl leading-tight">We are your growth partner.</h1>
+        <p class="mt-5 text-lg text-steel max-w-3xl">Traditional agencies work for you. Propelpad works with you. Most agencies bill hours and deliver reports. Propelpad embeds into your brand like an in-house growth team — accountable for your revenue, your rankings, and your category position.</p>
+        <div class="step-chart" aria-label="Growth partnership steps">
+          <div class="step-row">
+            <div class="step-item" data-level="1">
+              <div class="step-caption">
+                <span class="step-dot" aria-hidden="true"></span>
+                <div class="step-copy">
+                  <h2 class="font-display font-bold">Founder mindset</h2>
+                  <p>Every decision is tied to revenue, not deliverables.</p>
+            </div>
+              </div>
+              </div>
+            <div class="step-item" data-level="2">
+              <div class="step-caption">
+                <span class="step-dot" aria-hidden="true"></span>
+                <div class="step-copy">
+                  <h2 class="font-display font-bold">Aligned compensation</h2>
+                  <p>Our compensation is linked to your growth. We earn when you earn.</p>
+              </div>
+            </div>
+            </div>
+            <div class="step-item" data-level="3">
+              <div class="step-caption">
+                <span class="step-dot" aria-hidden="true"></span>
+                <div class="step-copy">
+                  <h2 class="font-display font-bold">Daily execution</h2>
+                  <p>We don't hand over a strategy deck and disappear. We are in the platforms daily.</p>
+            </div>
+          </div>
+              </div>
+            <div class="step-item" data-level="4">
+              <div class="step-caption">
+                <span class="step-dot" aria-hidden="true"></span>
+                <div class="step-copy">
+                  <h2 class="font-display font-bold">One team owns everything</h2>
+                  <p>No gaps between your growth strategy and your execution.</p>
+              </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-cloud border-b border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] text-ink mb-3">Agency vs. Propelpad</h2>
+        <p class="text-steel mb-8">How the two compare, side by side.</p>
+        <div class="grid lg:grid-cols-2 gap-5">
+          <div class="rounded-2xl bg-white border border-frostline p-7">
+            <div class="text-xs font-mono font-bold uppercase tracking-wider text-mist mb-2">Traditional agency</div>
+            <h3 class="font-display font-bold text-2xl text-ink mb-2">Paid on ad spend</h3>
+            <p class="text-steel text-sm mb-5">Bills hours and ad spend, no matter the result.</p>
+            <ul class="space-y-3 text-sm text-ink">
+              <li class="flex gap-2"><i data-lucide="x" class="w-4 h-4 text-scoop-500 mt-0.5 shrink-0"></i> Works for you, not with you</li>
+              <li class="flex gap-2"><i data-lucide="x" class="w-4 h-4 text-scoop-500 mt-0.5 shrink-0"></i> Paid on spend and hours, not results</li>
+              <li class="flex gap-2"><i data-lucide="x" class="w-4 h-4 text-scoop-500 mt-0.5 shrink-0"></i> Delivers reports, not outcomes</li>
+              <li class="flex gap-2"><i data-lucide="x" class="w-4 h-4 text-scoop-500 mt-0.5 shrink-0"></i> One vendor among many. Zero ownership</li>
+            </ul>
+      </div>
+          <div class="rounded-2xl bg-ink text-white p-7">
+            <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-300 mb-2">Propelpad</div>
+            <h3 class="font-display font-bold text-2xl mb-2">Paid on your revenue</h3>
+            <p class="text-mist text-sm mb-5">Earns a percentage of your revenue, not just for the hours worked.</p>
+            <ul class="space-y-3 text-sm">
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-freeze-300 mt-0.5 shrink-0"></i> Works with you, like a founder</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-freeze-300 mt-0.5 shrink-0"></i> Compensation tied to revenue, not spend</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-freeze-300 mt-0.5 shrink-0"></i> Owns strategy, execution, and outcomes</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-freeze-300 mt-0.5 shrink-0"></i> One partner across growth and fulfilment</li>
+            </ul>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">Signal over noise</div>
+        <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] text-ink mb-8">Why brands choose Propelpad</h2>
+        <div class="why-rail">
+          <div class="why-row">
+            <div class="why-index">01</div>
+            <div class="why-body">
+              <h3 class="font-display font-bold">Direct platform relationships</h3>
+              <p>Category manager connections at Blinkit, Zepto, Instamart, Flipkart Minutes, Amazon, and BigBasket — relationships most agencies simply do not have.</p>
+          </div>
+            </div>
+          <div class="why-row">
+            <div class="why-index">02</div>
+            <div class="why-body">
+              <h3 class="font-display font-bold">Aligned incentives</h3>
+              <p>We earn a percentage of your revenue, which means our interest is identical to yours — grow the brand, grow the number.</p>
+          </div>
+          </div>
+          <div class="why-row">
+            <div class="why-index">03</div>
+            <div class="why-body">
+              <h3 class="font-display font-bold">Hands-on daily execution</h3>
+              <p>We are in the platforms every day — not preparing for the next client presentation.</p>
+        </div>
+      </div>
+          <div class="why-row">
+            <div class="why-index">04</div>
+            <div class="why-body">
+              <h3 class="font-display font-bold">One team across everything</h3>
+              <p>Growth consultancy and fulfilment under one roof — no gaps, no finger-pointing between vendors.</p>
+      </div>
+          </div>
+          <div class="why-row">
+            <div class="why-index">05</div>
+            <div class="why-body">
+              <h3 class="font-display font-bold">Transparent reporting</h3>
+              <p>Real-time dashboards, weekly reviews, and monthly P&amp;L snapshots — you always know exactly what is happening and why.</p>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PLATFORMS -->
+  <main id="page-platforms" class="page-view flex-1">
+    <section class="py-16 border-b border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">Platform access</div>
+        <h1 class="font-display font-bold text-[clamp(1.75rem,4.5vw,3rem)] text-ink max-w-4xl leading-tight">We get your brand into platforms most can't access alone.</h1>
+        <p class="mt-5 text-lg text-steel max-w-3xl">Direct relationships with category managers across India's biggest Q-Commerce and E-Commerce platforms.</p>
+        <div class="mt-8 flex flex-wrap gap-2">
+          <span class="platform-logo-pill" title="Blinkit"><img class="no-invert" src="assets/platforms/blinkit.png" alt="Blinkit"></span>
+          <span class="platform-logo-pill" title="Instamart"><img src="assets/platforms/instamart.svg" alt="Instamart"></span>
+          <span class="platform-logo-pill" title="Zepto"><img class="no-invert" src="assets/platforms/zepto.png" alt="Zepto"></span>
+          <span class="platform-logo-pill" title="Flipkart Minutes"><img src="assets/platforms/flipkart.svg" alt="Flipkart Minutes"></span>
+          <span class="platform-logo-pill" title="Amazon"><img src="assets/platforms/amazon.svg" alt="Amazon"></span>
+          <span class="platform-logo-pill" title="BigBasket"><img class="no-invert" src="assets/platforms/bigbasket.svg" alt="BigBasket"></span>
+        </div>
+        <div class="mt-12 grid md:grid-cols-2 gap-5">
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <div class="text-xs font-mono font-bold text-freeze-600 mb-2">01 · We get you listed</div>
+            <p class="text-steel text-sm">Navigating onboarding requirements, documentation, and category allocation that most brands can't do on their own.</p>
+          </article>
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <div class="text-xs font-mono font-bold text-freeze-600 mb-2">02 · Catalogue setup done right</div>
+            <p class="text-steel text-sm">Listings, images, pricing, and compliance configured for performance from day one.</p>
+          </article>
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <div class="text-xs font-mono font-bold text-freeze-600 mb-2">03 · Direct advocacy</div>
+            <p class="text-steel text-sm">When issues arise or opportunities open up, we have the right conversations fast.</p>
+          </article>
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <div class="text-xs font-mono font-bold text-freeze-600 mb-2">04 · Ongoing management</div>
+            <p class="text-steel text-sm">Account management, sponsored ads, and ranking optimisation on every platform you are live on.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">Daily ownership</div>
+        <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] text-ink max-w-3xl">What we do every single day.</h2>
+        <p class="mt-4 text-steel max-w-3xl">Growth ownership is not a monthly review call. These daily optimisations compound — lower acquisition costs, consistent ranking growth, and sustained revenue scale.</p>
+        <ol class="mt-10 space-y-4">
+          <li class="rounded-2xl border border-frostline p-5 sm:p-6 flex gap-4 bg-white">
+            <span class="font-mono text-freeze-600 font-bold text-sm pt-1">01</span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Keyword &amp; search management</h3>
+              <p class="text-sm text-steel mt-1">Monitor rankings, add high-intent search terms based on trend shifts, remove inefficient keywords, and track competitor movements in real time.</p>
+      </div>
+          </li>
+          <li class="rounded-2xl border border-frostline p-5 sm:p-6 flex gap-4 bg-white">
+            <span class="font-mono text-freeze-600 font-bold text-sm pt-1">02</span>
+          <div>
+              <h3 class="font-display font-bold text-lg">Bid &amp; cost efficiency</h3>
+              <p class="text-sm text-steel mt-1">Daily CPM and CPC monitoring, bid adjustments based on conversion velocity, and budget reallocation toward high-performing SKUs.</p>
+              </div>
+          </li>
+          <li class="rounded-2xl border border-frostline p-5 sm:p-6 flex gap-4 bg-white">
+            <span class="font-mono text-freeze-600 font-bold text-sm pt-1">03</span>
+              <div>
+              <h3 class="font-display font-bold text-lg">Listing &amp; conversion monitoring</h3>
+              <p class="text-sm text-steel mt-1">Tracking SKU-level conversion rates, pricing and discount calibration, and listing visibility checks.</p>
+              </div>
+          </li>
+          <li class="rounded-2xl border border-frostline p-5 sm:p-6 flex gap-4 bg-white">
+            <span class="font-mono text-freeze-600 font-bold text-sm pt-1">04</span>
+          <div>
+              <h3 class="font-display font-bold text-lg">Platform algorithm signals</h3>
+              <p class="text-sm text-steel mt-1">Monitoring search placement fluctuations and managing stock-health signals that affect rankings.</p>
+              </div>
+          </li>
+          <li class="rounded-2xl border border-frostline p-5 sm:p-6 flex gap-4 bg-white">
+            <span class="font-mono text-freeze-600 font-bold text-sm pt-1">05</span>
+          <div>
+              <h3 class="font-display font-bold text-lg">Performance intervention</h3>
+              <p class="text-sm text-steel mt-1">When ROAS drops, we act within hours — not at the next weekly call. Winning campaigns scale fast. Losing ones get fixed or cut.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- ENGAGEMENT -->
+  <main id="page-engagement" class="page-view flex-1">
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">Your first 90–120 days</div>
+        <h1 class="font-display font-bold text-[clamp(1.75rem,4.5vw,3rem)] text-ink max-w-3xl leading-tight">Quick commerce onboarding gates are strict.</h1>
+        <p class="mt-5 text-lg text-steel max-w-3xl">Most brands spend months trying and still don't make it through. Here is how the engagement is structured while we get you live.</p>
+
+        <div class="mt-10 rounded-3xl bg-ink text-white p-8 sm:p-10 max-w-3xl">
+          <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-300 mb-3">Onboarding sprint</div>
+          <div class="font-display font-bold text-[clamp(1.75rem,4.5vw,3rem)]">₹1,00,000<span class="text-2xl text-white/70"> / month</span></div>
+          <p class="mt-4 text-mist">Covers the onboarding sprint: platform access, documentation, and catalogue setup until you're live.</p>
+          </div>
+
+        <div class="mt-10 grid lg:grid-cols-3 gap-5">
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <div class="text-xs font-mono font-bold text-freeze-600 mb-3">01</div>
+            <h2 class="font-display font-bold text-xl mb-2">Month 1 &amp; 2 · Pitch and setup</h2>
+            <p class="text-sm text-steel">Pitching the brand to all platforms, category mapping, compliance documentation, brand registration, and catalogue prep across every platform you are targeting.</p>
+          </article>
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <div class="text-xs font-mono font-bold text-freeze-600 mb-3">02</div>
+            <h2 class="font-display font-bold text-xl mb-2">Month 3 · Platform onboarding</h2>
+            <p class="text-sm text-steel">Our category manager relationships go to work. Securing listing approval, SKU mapping, and pricing setup on Blinkit, Zepto, Instamart, and Flipkart Minutes.</p>
+          </article>
+          <article class="rounded-2xl border border-frostline bg-white p-6">
+            <div class="text-xs font-mono font-bold text-freeze-600 mb-3">03</div>
+            <h2 class="font-display font-bold text-xl mb-2">Month 4 · Go live</h2>
+            <p class="text-sm text-steel">First orders go live, campaigns launch, and performance baselines are set before we move into full platform management.</p>
+          </article>
+      </div>
+
+        <div class="mt-10">
+          <button onclick="navigateTo('contact')" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-freeze-500 hover:bg-freeze-600 text-white font-display font-semibold">
+            Start the conversation
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CONTACT -->
+  <main id="page-contact" class="page-view flex-1">
+    <section class="py-16 border-b border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">Contact</div>
+        <h1 class="font-display font-bold text-[clamp(1.75rem,4.5vw,3rem)] text-ink max-w-3xl leading-tight">Let's talk.</h1>
+        <p class="mt-5 text-lg text-steel max-w-3xl">Still paying your agency to “manage” your ads? Reach Adam or Gyan directly — email is the fastest way to start a growth conversation.</p>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-5">
+          <article class="rounded-2xl border border-frostline bg-white p-6 sm:p-7">
+            <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">Manager — Strategic Initiatives</div>
+            <h2 class="font-display font-bold text-2xl text-ink">Adam Raymond</h2>
+            <p class="mt-2 text-sm text-steel">Partnerships, strategy, and brand conversations.</p>
+            <div class="mt-6 space-y-3">
+              <a href="mailto:adam@propelpad.in" class="flex items-center gap-3 text-freeze-600 font-semibold hover:text-freeze-700">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-freeze-50 border border-frostline">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </span>
+                adam@propelpad.in
+              </a>
+              <a href="tel:+919137489588" class="flex items-center gap-3 text-steel hover:text-freeze-600">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-cloud border border-frostline">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                </span>
+                +91 91374 89588
+              </a>
+            </div>
+          </article>
+
+          <article class="rounded-2xl border border-frostline bg-white p-6 sm:p-7">
+            <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">Co-Founder</div>
+            <h2 class="font-display font-bold text-2xl text-ink">Gyan Menon</h2>
+            <p class="mt-2 text-sm text-steel">Platform growth, ops, and day-to-day ownership.</p>
+            <div class="mt-6 space-y-3">
+              <a href="mailto:gm@propelpad.in" class="flex items-center gap-3 text-freeze-600 font-semibold hover:text-freeze-700">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-freeze-50 border border-frostline">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </span>
+                gm@propelpad.in
+              </a>
+              <a href="tel:+918424048334" class="flex items-center gap-3 text-steel hover:text-freeze-600">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-cloud border border-frostline">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                </span>
+                +91 84240 48334
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-cloud border-t border-frostline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-3">Office</div>
+        <h2 class="font-display font-bold text-[clamp(1.45rem,3.2vw,2.25rem)] text-ink max-w-3xl">Visit us in Chembur, Mumbai.</h2>
+        <p class="mt-4 text-steel max-w-2xl">Our base is in Ghatla, Chembur — easy to reach, and ready for in-person conversations.</p>
+
+        <div class="office-panel mt-10">
+          <div class="office-details">
+            <div>
+              <div class="text-xs font-mono font-bold uppercase tracking-wider text-freeze-600 mb-2">Propelpad HQ</div>
+              <h3 class="font-display font-bold text-xl text-ink">Ganesh Industrial Estate</h3>
+              <div class="office-meta">
+                <div class="office-meta-row">
+                  <span class="office-meta-icon" aria-hidden="true"><i data-lucide="map-pin" class="w-4 h-4"></i></span>
+                  <p class="text-sm text-steel leading-relaxed">
+                    Waman Tukaram Patil Marg,<br>
+                    Ghatla, Chembur,<br>
+                    Mumbai, Maharashtra 400071
+                  </p>
+              </div>
+                <div class="office-meta-row">
+                  <span class="office-meta-icon" aria-hidden="true"><i data-lucide="building-2" class="w-4 h-4"></i></span>
+                  <p class="text-sm text-steel leading-relaxed">
+                    Industrial estate · Chembur East
+              </p>
+            </div>
+                  </div>
+                  </div>
+                  <div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ganesh+Industrial+Estate,+Waman+Tukaram+Patil+Marg,+Ghatla,+Chembur,+Mumbai,+Maharashtra+400071"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-freeze-500 hover:bg-freeze-600 text-white font-display font-semibold text-sm"
+              >
+                Get directions
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </a>
+              <p class="mt-3 text-xs text-mist">Opens Google Maps in a new tab.</p>
+                  </div>
+                </div>
+          <div class="contact-map min-h-0">
+            <iframe
+              id="contact-google-map"
+              title="Propelpad office map — Chembur, Mumbai"
+              src="https://www.google.com/maps?q=Ganesh+Industrial+Estate,+Waman+Tukaram+Patil+Marg,+Ghatla,+Chembur,+Mumbai,+Maharashtra+400071&z=16&hl=en&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+                </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-ink text-paper border-t border-white/10 pt-16 pb-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-white/10">
+        <div class="lg:col-span-2 space-y-4">
+          <img src="assets/propelpad-logo-light.png" alt="Propelpad" class="h-9 w-auto" />
+          <p class="text-mist text-sm max-w-sm leading-relaxed">
+            The growth partner for D2C brands on Q-Commerce, E-Commerce, and D2C platforms. We own growth with you — listings, catalogue, ads, and rankings.
+          </p>
+          </div>
+        <div class="hidden md:block space-y-3 text-sm">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider">Explore</div>
+          <ul class="space-y-2 text-mist">
+            <li><button onclick="navigateTo('opportunity')" class="hover:text-freeze-300">The Opportunity</button></li>
+            <li><button onclick="navigateTo('partnership')" class="hover:text-freeze-300">Why choose us</button></li>
+            <li><button onclick="navigateTo('platforms')" class="hover:text-freeze-300">Platforms</button></li>
+          </ul>
+        </div>
+        <div class="space-y-3 text-sm">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider">Platforms</div>
+          <ul class="flex flex-col gap-2.5 text-mist">
+            <li class="footer-platform-icon"><img src="assets/platforms/blinkit.png" alt=""><span>Blinkit</span></li>
+            <li class="footer-platform-icon"><img src="assets/platforms/zepto.png" alt=""><span>Zepto</span></li>
+            <li class="footer-platform-icon"><img src="assets/platforms/instamart.svg" alt=""><span>Instamart</span></li>
+            <li class="footer-platform-icon"><img src="assets/platforms/flipkart.svg" alt=""><span>Flipkart Minutes</span></li>
+            <li class="footer-platform-icon"><img src="assets/platforms/amazon.svg" alt=""><span>Amazon</span></li>
+            <li class="footer-platform-icon"><img src="assets/platforms/bigbasket.svg" alt=""><span>BigBasket</span></li>
+          </ul>
+        </div>
+        <div class="space-y-3 text-sm">
+          <div class="text-xs font-mono font-bold text-white uppercase tracking-wider">Contact</div>
+          <ul class="space-y-2 text-mist font-mono text-xs">
+            <li><a href="mailto:adam@propelpad.in" class="hover:text-freeze-300">adam@propelpad.in</a></li>
+            <li><a href="mailto:gm@propelpad.in" class="hover:text-freeze-300">gm@propelpad.in</a></li>
+            <li><a href="tel:+919137489588" class="hover:text-freeze-300">+91 91374 89588</a></li>
+            <li><a href="tel:+918424048334" class="hover:text-freeze-300">+91 84240 48334</a></li>
+            <li class="pt-1 leading-relaxed">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ganesh+Industrial+Estate,+Waman+Tukaram+Patil+Marg,+Ghatla,+Chembur,+Mumbai,+Maharashtra+400071"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-freeze-300"
+              >
+                Ganesh Industrial Estate,<br>
+                Waman Tukaram Patil Marg,<br>
+                Ghatla, Chembur,<br>
+                Mumbai, Maharashtra 400071
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-4 pb-1 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-mist">
+        <div>© 2026 Propelpad. All rights reserved.</div>
+        <div class="text-freeze-300 font-bold tracking-widest uppercase">We grow with you</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function navigateTo(pageId) {
+      document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById('page-' + pageId);
+      if (target) target.classList.add('active');
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('data-nav') === pageId) {
+          link.classList.remove('text-steel', 'hover:text-ink', 'hover:bg-black/5', 'font-medium');
+          link.classList.add('text-freeze-600', 'bg-freeze-50', 'font-semibold');
+        } else {
+          link.classList.remove('text-freeze-600', 'bg-freeze-50', 'font-semibold');
+          link.classList.add('text-steel', 'hover:text-ink', 'hover:bg-black/5', 'font-medium');
+        }
+      });
+
+      closeMobileMenu();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function syncHeaderHeight() {
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+      const h = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--site-header-h', h + 'px');
+    }
+
+    var menuTouchBlocker = null;
+
+    function lockBodyScroll() {
+      if (document.body.dataset.scrollLocked === '1') return;
+      const y = window.scrollY || document.documentElement.scrollTop || 0;
+      document.body.dataset.scrollLocked = '1';
+      document.body.dataset.scrollY = String(y);
+      document.documentElement.classList.add('menu-scroll-lock');
+      document.body.classList.add('menu-scroll-lock');
+
+      // Keep page visually at same scroll without moving the fixed header
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + y + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+
+      menuTouchBlocker = function (e) {
+        const menu = document.getElementById('mobile-menu');
+        if (menu && menu.contains(e.target)) return;
+        e.preventDefault();
+      };
+      document.addEventListener('touchmove', menuTouchBlocker, { passive: false });
+      syncHeaderHeight();
+    }
+
+    function unlockBodyScroll() {
+      if (document.body.dataset.scrollLocked !== '1') return;
+      const y = parseInt(document.body.dataset.scrollY || '0', 10) || 0;
+      document.body.dataset.scrollLocked = '0';
+      document.documentElement.classList.remove('menu-scroll-lock');
+      document.body.classList.remove('menu-scroll-lock');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      if (menuTouchBlocker) {
+        document.removeEventListener('touchmove', menuTouchBlocker);
+        menuTouchBlocker = null;
+      }
+      window.scrollTo(0, y);
+    }
+
+    function setMobileMenuOpen(open) {
+      const menu = document.getElementById('mobile-menu');
+      const backdrop = document.getElementById('mobile-menu-backdrop');
+      const btn = document.getElementById('mobile-menu-btn');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (!menu) return;
+
+      if (open) {
+        syncHeaderHeight();
+        document.body.classList.add('menu-is-open');
+        menu.classList.add('is-open');
+        if (backdrop) backdrop.classList.add('is-open');
+        lockBodyScroll();
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+        if (icon) icon.setAttribute('data-lucide', 'x');
+      } else {
+        document.body.classList.remove('menu-is-open');
+        menu.classList.remove('is-open');
+        if (backdrop) backdrop.classList.remove('is-open');
+        unlockBodyScroll();
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+        if (icon) icon.setAttribute('data-lucide', 'menu');
+      }
+      lucide.createIcons();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (!menu) return;
+      setMobileMenuOpen(!menu.classList.contains('is-open'));
+    }
+
+    function closeMobileMenu() {
+      setMobileMenuOpen(false);
+    }
+
+    syncHeaderHeight();
+    window.addEventListener('resize', syncHeaderHeight);
+
+    (function initHeroLogoTilt() {
+      const stage = document.getElementById('hero-logo-stage');
+      const logo = document.getElementById('hero-logo-3d');
+      const home = document.getElementById('page-home');
+      if (!stage || !logo || !home) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const toDeg = 180 / Math.PI;
+      const mouseTarget = { x: 0, y: 0 };
+      const mouseCurrent = { x: 0, y: 0 };
+      let hovering = false;
+      let startTime = performance.now();
+
+      function frame(now) {
+        const t = (now - startTime) / 1000;
+
+        // Idle auto motion — gentle orbit + float
+        const idleX = Math.sin(t * 0.7) * 0.06 + Math.sin(t * 1.1) * 0.02;
+        const idleY = Math.cos(t * 0.55) * 0.1 + Math.sin(t * 0.9) * 0.03;
+        const idleFloat = Math.sin(t * 0.8) * 8;
+
+        // Ease mouse tilt toward target
+        const ease = hovering ? 0.14 : 0.08;
+        mouseCurrent.x += (mouseTarget.x - mouseCurrent.x) * ease;
+        mouseCurrent.y += (mouseTarget.y - mouseCurrent.y) * ease;
+
+        // Blend: mouse dominates when hovering, idle stays subtle underneath
+        const blend = hovering ? 0.22 : 1;
+        const rotX = mouseCurrent.x + idleX * blend;
+        const rotY = mouseCurrent.y + idleY * blend;
+        const floatY = hovering ? idleFloat * 0.35 : idleFloat;
+
+        logo.style.transform =
+          'translateY(' + floatY.toFixed(2) + 'px) ' +
+          'rotateX(' + (rotX * toDeg).toFixed(2) + 'deg) ' +
+          'rotateY(' + (rotY * toDeg).toFixed(2) + 'deg)';
+
+        requestAnimationFrame(frame);
+      }
+
+      stage.addEventListener('pointerenter', () => { hovering = true; });
+      stage.addEventListener('pointerleave', () => {
+        hovering = false;
+        mouseTarget.x = 0;
+        mouseTarget.y = 0;
+      });
+      stage.addEventListener('pointermove', (event) => {
+        if (!home.classList.contains('active') || !hovering) return;
+        const rect = stage.getBoundingClientRect();
+        const mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        const mouseY = ((event.clientY - rect.top) / rect.height) * 2 - 1;
+        // rotationY = mouseX * 0.25, rotationX = mouseY * 0.15 (radians)
+        mouseTarget.y = mouseX * 0.25;
+        mouseTarget.x = mouseY * 0.15;
+      }, { passive: true });
+
+      requestAnimationFrame(frame);
+    })();
+  </script>
+</body>
+</html>
