@@ -69,31 +69,21 @@
       max-width: 100%;
       overflow-x: clip;
     }
-    html.menu-scroll-lock,
-    body.menu-scroll-lock {
+    html.menu-scroll-lock {
       overflow: hidden !important;
       overscroll-behavior: none;
       height: 100%;
     }
     body.menu-scroll-lock {
+      overflow: visible !important;
+      overscroll-behavior: none;
       touch-action: none;
+      /* Do NOT set height:100% — that clips page content and shows blank when scrolled */
     }
     body.menu-is-open .page-view.active,
     body.menu-is-open footer {
-      filter: blur(8px);
-      transform: scale(1.015);
-      transform-origin: center top;
       pointer-events: none;
       user-select: none;
-      transition:
-        filter 0.28s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .page-view.active,
-    footer {
-      transition:
-        filter 0.28s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
     }
     #mobile-menu.is-open {
       touch-action: pan-y;
@@ -631,9 +621,9 @@
       position: fixed;
       inset: 0;
       z-index: 70;
-      background: rgba(7, 20, 51, 0.12);
-      -webkit-backdrop-filter: none;
-      backdrop-filter: none;
+      background: rgba(244, 247, 252, 0.35);
+      -webkit-backdrop-filter: blur(12px) saturate(1.1);
+      backdrop-filter: blur(12px) saturate(1.1);
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
@@ -645,6 +635,11 @@
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
+    }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      #mobile-menu-backdrop {
+        background: rgba(244, 247, 252, 0.72);
+      }
     }
     @media (prefers-reduced-motion: reduce) {
       #mobile-menu,
@@ -1479,12 +1474,14 @@
       document.documentElement.classList.add('menu-scroll-lock');
       document.body.classList.add('menu-scroll-lock');
 
-      // Keep page visually at same scroll without moving the fixed header
+      // Freeze scroll position without clipping content height
       document.body.style.position = 'fixed';
       document.body.style.top = '-' + y + 'px';
       document.body.style.left = '0';
       document.body.style.right = '0';
       document.body.style.width = '100%';
+      document.body.style.height = 'auto';
+      document.body.style.minHeight = Math.max(window.innerHeight, document.body.scrollHeight) + 'px';
 
       menuTouchBlocker = function (e) {
         const menu = document.getElementById('mobile-menu');
@@ -1506,6 +1503,8 @@
       document.body.style.left = '';
       document.body.style.right = '';
       document.body.style.width = '';
+      document.body.style.height = '';
+      document.body.style.minHeight = '';
       if (menuTouchBlocker) {
         document.removeEventListener('touchmove', menuTouchBlocker);
         menuTouchBlocker = null;
